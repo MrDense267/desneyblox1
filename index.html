@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <h1>Denseblox: A 2008 Roblox Revival!</h1>
-  </head>
-  <body>
-    <button type="button">Launch Client</button>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Denseblox: A 2008 Roblox Revival!</title>
+  <script src="PlaceLauncher.js"></script> <!-- Link to your script -->
+</head>
+<body>
+  <h1>Denseblox: A 2008 Roblox Revival!</h1>
+  
+  <!-- Add some explanatory text -->
+  <p>Welcome to Denseblox! Click the button below to launch the 2008 Roblox client and join the game.</p>
+
+  <!-- Launch button -->
+  <button type="button" onclick="launchClient()">Launch Client</button>
+
+  <script>
+    // Define the function to launch the client using PlaceLauncher.js
+    function launchClient() {
+      // Replace the following with your desired place ID or URL
+      const placeID = 123456; // Example place ID
+      const behaviorID = 'exampleBehavior'; // Example behavior ID
+      
+      // Use the PlaceLauncher function
+      Roblox.Launch.RequestGame(behaviorID, placeID);
+
+      // Alternatively, use StartGame for a direct launch (adjust the parameters as needed)
+      // Roblox.Launch.StartGame('visitUrlHere', 'authUrlHere', 'Join', 123);
+    }
+  </script>
+</body>
 </html>
