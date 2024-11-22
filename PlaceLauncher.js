@@ -42,7 +42,7 @@ Roblox.Launch.isVista = function()
 
 Roblox.Launch.RequestGame = function (behaviorID, placeID)
 {
-    if (checkRobloxInstall())
+    if (Roblox.Launch.CheckRobloxInstall())
     {
         var launcher = new RBX.PlaceLauncher($find(behaviorID));
         launcher.RequestGame(placeID);
@@ -51,7 +51,7 @@ Roblox.Launch.RequestGame = function (behaviorID, placeID)
 
 Roblox.Launch.RequestGameJob = function (behaviorID, gameJobID)
 {
-    if (checkRobloxInstall())
+    if (Roblox.Launch.CheckRobloxInstall())
     {
         var launcher = new RBX.PlaceLauncher($find(behaviorID));
         launcher.RequestGameJob(gameJobID);
@@ -60,7 +60,7 @@ Roblox.Launch.RequestGameJob = function (behaviorID, gameJobID)
 
 Roblox.Launch.StartGame = function (visitUrl, authenticationUrl, type, userID)
 {
-    if (checkRobloxInstall()) {
+    if (Roblox.Launch.CheckRobloxInstall()) {
         urchinTracker("Visit/Try/" + type + "/" + userID);
 
         var prefix = null;
@@ -180,7 +180,7 @@ RBX.PlaceLauncher.prototype = {
     // TODO: This should only be called once.  What if you call it again???
     RequestGame: function(placeID) {
    
-        if (checkRobloxInstall()) {
+        if (Roblox.Launch.CheckRobloxInstall()) {
         
             this._showDialog();
             
@@ -195,7 +195,7 @@ RBX.PlaceLauncher.prototype = {
     // TODO: This should only be called once.  What if you call it again???
     RequestGameJob: function(gameJobID) {
    
-        checkRobloxInstall();
+        Roblox.Launch.CheckRobloxInstall()();
         
         this._showDialog();
         
