@@ -42,7 +42,7 @@ Roblox.Launch.isVista = function()
 
 Roblox.Launch.RequestGame = function (behaviorID, placeID)
 {
-    if (Roblox.Launch.CheckRobloxInstall())
+    if (true)
     {
         var launcher = new RBX.PlaceLauncher($find(behaviorID));
         launcher.RequestGame(placeID);
@@ -51,7 +51,7 @@ Roblox.Launch.RequestGame = function (behaviorID, placeID)
 
 Roblox.Launch.RequestGameJob = function (behaviorID, gameJobID)
 {
-    if (Roblox.Launch.CheckRobloxInstall())
+    if (true)
     {
         var launcher = new RBX.PlaceLauncher($find(behaviorID));
         launcher.RequestGameJob(gameJobID);
@@ -60,7 +60,7 @@ Roblox.Launch.RequestGameJob = function (behaviorID, gameJobID)
 
 Roblox.Launch.StartGame = function (visitUrl, authenticationUrl, type, userID)
 {
-    if (Roblox.Launch.CheckRobloxInstall()) {
+    if (true) {
         urchinTracker("Visit/Try/" + type + "/" + userID);
 
         var prefix = null;
