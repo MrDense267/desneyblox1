@@ -1,4 +1,4 @@
-﻿Type.registerNamespace('Roblox.Launch');
+Type.registerNamespace('Roblox.Launch');
 
 Roblox.Launch._isIDE = null;
 Roblox.Launch._isRobloxBrowser = null;
@@ -42,7 +42,7 @@ Roblox.Launch.isVista = function()
 
 Roblox.Launch.RequestGame = function (behaviorID, placeID)
 {
-    if (true)
+    if (checkRobloxInstall())
     {
         var launcher = new RBX.PlaceLauncher($find(behaviorID));
         launcher.RequestGame(placeID);
@@ -51,7 +51,7 @@ Roblox.Launch.RequestGame = function (behaviorID, placeID)
 
 Roblox.Launch.RequestGameJob = function (behaviorID, gameJobID)
 {
-    if (true)
+    if (checkRobloxInstall())
     {
         var launcher = new RBX.PlaceLauncher($find(behaviorID));
         launcher.RequestGameJob(gameJobID);
@@ -60,7 +60,7 @@ Roblox.Launch.RequestGameJob = function (behaviorID, gameJobID)
 
 Roblox.Launch.StartGame = function (visitUrl, authenticationUrl, type, userID)
 {
-    if (true) {
+    if (checkRobloxInstall()) {
         urchinTracker("Visit/Try/" + type + "/" + userID);
 
         var prefix = null;
@@ -180,7 +180,7 @@ RBX.PlaceLauncher.prototype = {
     // TODO: This should only be called once.  What if you call it again???
     RequestGame: function(placeID) {
    
-        if (Roblox.Launch.CheckRobloxInstall()) {
+        if (checkRobloxInstall()) {
         
             this._showDialog();
             
@@ -195,7 +195,7 @@ RBX.PlaceLauncher.prototype = {
     // TODO: This should only be called once.  What if you call it again???
     RequestGameJob: function(gameJobID) {
    
-        Roblox.Launch.CheckRobloxInstall()();
+        checkRobloxInstall();
         
         this._showDialog();
         
@@ -272,3 +272,12 @@ RBX.PlaceLauncher.registerClass('RBX.PlaceLauncher', null, Sys.IDisposable);
 
 // Notify ScriptManager that this is the end of the script.
 if (typeof(Sys) !== 'undefined') Sys.Application.notifyScriptLoaded(); 
+
+/*
+     FILE ARCHIVED ON 22:20:23 Nov 25, 2007 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:08:07 Dec 10, 2017.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
