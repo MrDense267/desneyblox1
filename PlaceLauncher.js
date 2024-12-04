@@ -1,4 +1,4 @@
-Type.registerNamespace('Roblox.Launch');
+﻿Type.registerNamespace('Roblox.Launch');
 
 Roblox.Launch._isIDE = null;
 Roblox.Launch._isRobloxBrowser = null;
@@ -167,21 +167,13 @@ Type.registerNamespace('RBX');
 
 RBX.PlaceLauncher = function(modalBehavior) {
     this._modalBehavior = modalBehavior;
-
-    if (!this._modalBehavior) {
-        throw new Error("ModalBehavior is not found. Ensure that the behaviorID is correctly mapped.");
-    }
     
     this._popup = $get(this._modalBehavior.get_PopupControlID());
-    
-    if (!this._popup) {
-        throw new Error("Popup element not found. Check the PopupControlID mapping.");
-    }
-
     this._cancelButton = $get("Cancel", this._popup);
     this._cancelHandler = null;
+    
     this._cancelled = false;
-};
+   }
 
 RBX.PlaceLauncher.prototype = {
 
