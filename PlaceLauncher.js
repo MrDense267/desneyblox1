@@ -28,6 +28,11 @@ Roblox.Launch.isIDE = function ()
     return Roblox.Launch._isIDE;
 }
 
+function checkRobloxInstall() {
+	console.log("a");
+	return true;
+}
+
 Roblox.Launch.isRobloxBrowser = function()
 {
     Roblox.Launch.isIDE();
@@ -140,11 +145,6 @@ Roblox.Launch.StartGame = function (visitUrl, authenticationUrl, type, userID)
 }
 
 Roblox.Launch.CheckRobloxInstall = function(clientVersion, installPath, updatePath) {
-	return true;
-}
-
-function checkRobloxInstall() {
-	console.log("a");
 	return true;
 }
 
