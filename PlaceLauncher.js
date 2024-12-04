@@ -140,26 +140,11 @@ Roblox.Launch.StartGame = function (visitUrl, authenticationUrl, type, userID)
 }
 
 Roblox.Launch.CheckRobloxInstall = function(clientVersion, installPath, updatePath) {
-	try 
-	{
-		var robloxUpdater = new ActiveXObject("RobloxInstall.Updater");
+	return true;
+}
 
-		// See if product is out of date
-		if (robloxUpdater.Version == "") {
-			window.location = updatePath;
-			return false;
-		}
-		if (robloxUpdater.Version != clientVersion) {
-			window.location = updatePath;
-			return false;
-		}
-	} 
-	catch(e) 
-	{
-		// failure indicates Roblox is not properly installed - install product:
-		window.location = installPath;
-		return false;
-	}
+function checkRobloxInstall() {
+	console.log("a");
 	return true;
 }
 
